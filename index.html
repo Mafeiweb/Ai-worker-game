@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI打工人生 - The AI Worker Life</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="title">AI打工人生</h1>
+            <div class="subtitle">The AI Worker Life</div>
+        </div>
+
+        <div class="hud">
+            <div class="hud-item">
+                <span class="hud-label">💰 资金</span>
+                <span class="hud-value" id="money">$0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">📅 天数</span>
+                <span class="hud-value" id="day">第 0 天</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">⏰ 时间</span>
+                <span class="hud-value" id="time">自动推进</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">👨‍👩‍👧 家庭</span>
+                <span class="hud-value" id="family">1 人</span>
+            </div>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stat-row">
+                <span>📊 今日收入：</span>
+                <span class="stat-income" id="todayIncome">$0</span>
+            </div>
+            <div class="stat-row">
+                <span>💼 今日打工：</span>
+                <span class="stat-work" id="todayWork">$0 / $400</span>
+            </div>
+            <div class="stat-row">
+                <span>💸 今日支出：</span>
+                <span class="stat-expense" id="todayExpense">$0</span>
+            </div>
+            <div class="stat-row">
+                <span>🎯 目标：</span>
+                <span class="stat-target">$1,000,000</span>
+            </div>
+        </div>
+
+        <div class="message-box" id="messageBox">
+            <span class="message-text">欢迎来到 AI 打工人世界！</span>
+        </div>
+
+        <div class="action-panel">
+            <button class="btn btn-work" id="btnWork">
+                <span class="btn-icon">💼</span>
+                <span class="btn-text">正常上班</span>
+                <span class="btn-sub">+ $73 / 次</span>
+            </button>
+
+            <button class="btn btn-gamble" id="btnGamble">
+                <span class="btn-icon">🎰</span>
+                <span class="btn-text">赌博</span>
+                <span class="btn-sub">入场 $150 / 1.5% 赢 $1,000</span>
+            </button>
+
+            <button class="btn btn-child" id="btnChild">
+                <span class="btn-icon">👶</span>
+                <span class="btn-text">生孩子</span>
+                <span class="btn-sub">-$7,300 / +$30/天</span>
+            </button>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-title">📜 游戏规则</div>
+            <ul class="info-list">
+                <li>初始资金 $0，目标赚 $1,000,000</li>
+                <li>现实 1 分钟 = 游戏 1 天</li>
+                <li>每日基础生活费 $50，每个孩子 +$30/天</li>
+                <li>第 10/20/30/40/50 天强制生孩子</li>
+                <li>赌博需支付 $150 入场费，1.5% 赢 $1,000</li>
+                <li>可以负债，最高负债 $1,000,000</li>
+                <li>负债超限则失败，达标或存活 60 天则胜利</li>
+            </ul>
+        </div>
+
+        <div class="game-over-overlay" id="gameOverOverlay">
+            <div class="game-over-content">
+                <h2 class="game-over-title" id="gameOverTitle">游戏结束</h2>
+                <p class="game-over-message" id="gameOverMessage">你的故事到此结束</p>
+                <div class="game-over-stats" id="gameOverStats"></div>
+                <button class="btn btn-restart" id="btnRestart">
+                    <span class="btn-text">重新开始</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
